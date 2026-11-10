@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal Escolar</title>
+</head>
+<body>
+
+    <h1>Portal Escolar</h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <hr>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

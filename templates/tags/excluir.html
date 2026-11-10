@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Excluir tag</h2>
+
+<p>Tem certeza que deseja excluir a tag "{{ tag.nome }}"?</p>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <button type="submit">Confirmar exclusão</button>
+</form>
+
+<a href="{% url 'core:tags' %}">Cancelar</a>
+
+{% endblock %}

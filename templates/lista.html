@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos de Extensão</title>
+</head>
+<body>
+
+    <h1>Projetos de Extensão</h1>
+
+    {% for projeto in projetos %}
+        <h2>
+            <a href="{% url 'core:detalhe' projeto.id %}">
+                {{ projeto.titulo }}
+            </a>
+        </h2>
+
+        <p>Categoria: {{ projeto.categoria }}</p>
+    {% endfor %}
+
+</body>
+</html>
+
+{% endblock %}

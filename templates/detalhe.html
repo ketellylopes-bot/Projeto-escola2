@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ projeto.titulo }}</title>
+</head>
+<body>
+
+    <h1>{{ projeto.titulo }}</h1>
+
+    <p>{{ projeto.descricao }}</p>
+
+    <p>Categoria: {{ projeto.categoria }}</p>
+
+    <h2>Equipe</h2>
+
+    <ul>
+        {% for aluno in projeto.equipe.all %}
+            <li>{{ aluno.nome }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'core:lista' %}">Voltar</a>
+
+</body>
+</html>
+
+{% endblock %}

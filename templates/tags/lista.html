@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Tags</h2>
+
+<a href="{% url 'core:tag_criar' %}">Cadastrar tag</a>
+
+<ul>
+    {% for tag in tags %}
+        <li>
+            {{ tag.nome }}
+
+            <a href="{% url 'core:tag_editar' tag.id %}">Editar</a>
+
+            <a href="{% url 'core:tag_excluir' tag.id %}">Excluir</a>
+        </li>
+    {% empty %}
+        <li>Nenhuma tag cadastrada.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

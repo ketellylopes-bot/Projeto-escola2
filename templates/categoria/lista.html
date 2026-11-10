@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Categorias</h2>
+
+<a href="{% url 'core:categoria_criar' %}">Cadastrar categoria</a>
+
+<ul>
+    {% for categoria in categorias %}
+        <li>
+            {{ categoria.nome }}
+
+            <a href="{% url 'core:categoria_editar' categoria.id %}">Editar</a>
+
+            <a href="{% url 'core:categoria_excluir' categoria.id %}">Excluir</a>
+        </li>
+    {% empty %}
+        <li>Nenhuma categoria cadastrada.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
